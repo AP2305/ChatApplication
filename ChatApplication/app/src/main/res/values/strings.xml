@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyChat</string>
+    <string name="identityPoolID">us-east-1:5167d899-ed90-4ba8-abe3-aea94b408fc4</string>
+</resources>

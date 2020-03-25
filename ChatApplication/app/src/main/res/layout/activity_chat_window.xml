@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.chat.ChatWindowActivity"
+    android:background="@color/black">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/customActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/userChatImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userChatUName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="UserName"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toStartOf="@id/deleteBtn"
+                app:layout_constraintStart_toEndOf="@id/userChatImg" />
+
+            <ImageView
+                android:id="@+id/deleteBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:src="@drawable/img_delete_icon"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_top"
+        app:layout_constraintBottom_toTopOf="@id/sendLayout"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <LinearLayout
+        android:id="@+id/sendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/emojiBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="0.10"
+            android:padding="5dp"
+            android:src="@drawable/img_emoji_icon" />
+
+        <com.example.chatapplication.ui.chat.CustomEditText
+            android:id="@+id/message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.70"
+            android:background="@color/transparent"
+            android:hint="Enter Message"
+            android:maxLines="2" />
+
+        <ImageView
+            android:id="@+id/attachBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.10"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:src="@drawable/ic_attach_file" />
+
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="0.10"
+            android:background="@color/white"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:src="@drawable/send_icon" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
